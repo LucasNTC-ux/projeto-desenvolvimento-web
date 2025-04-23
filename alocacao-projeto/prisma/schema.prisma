@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // ou mysql/sqlite etc.
+  url      = env("DATABASE_URL")
+}
+
+model AlocacaoProjeto {
+  id                   Int     @id @default(autoincrement())
+  tecnico              String
+  id_tecnico           Int
+  id_projeto_categoria Int
+  usuario              String
+  id_usuario           Int
+  cliente              String
+  id_cliente           Int
+  qtd_horas_alocadas   Int
+  qtd_horas_comerciais Int
+  projeto_categoria    String
+}
